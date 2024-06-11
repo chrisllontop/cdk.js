@@ -1,13 +1,17 @@
 {
-  "name": "cloud-deployment-kit",
+  "name": "cdk.js",
   "type": "module",
   "version": "0.0.1",
   "description": "A tool to simplify workflows using fully typed JavaScript configurations for your favorite CI/CD services",
   "author": "Christian Llontop<chrisllontop@icloud.com>",
   "license": "MIT",
   "repository": "https://github.com/chrisllontop/cloud-deployment-kit",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@tsconfig/node-lts": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
