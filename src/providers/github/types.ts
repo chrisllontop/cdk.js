@@ -1,7 +1,7 @@
 export type GitHubActionsWorkflow = {
   name?: string;
-  on: GitHubActionsEventTrigger | GitHubActionsEventTrigger[];
-  jobs: Record<string, GitHubActionsJob>;
+  on?: GitHubActionsEventTrigger | GitHubActionsEventTrigger[];
+  jobs?: Record<string, GitHubActionsJob>;
 };
 
 export type GitHubActionsEventTrigger =
