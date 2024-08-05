@@ -18,5 +18,9 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "yaml": "^2.5.0"
   }
 }

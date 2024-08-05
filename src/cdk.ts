@@ -1,4 +1,4 @@
-import type {ProviderInstance} from "./types/providers/provider.ts";
+import {type ProviderInstance, type ProviderValues} from "./types/providers/provider.ts";
 
 export class Cdk {
   provider;
@@ -10,8 +10,8 @@ export class Cdk {
     return this.provider;
   }
 
-  build() {
-    this.provider.build();
+  build(prefixPath: ProviderValues) {
+    this.provider.build(prefixPath);
   }
 
 }
