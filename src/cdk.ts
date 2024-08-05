@@ -10,8 +10,8 @@ export class Cdk {
     return this.provider;
   }
 
-  build(prefixPath: ProviderValues) {
-    this.provider.build(prefixPath);
+  build() {
+    this.provider.build();
   }
 
 }
