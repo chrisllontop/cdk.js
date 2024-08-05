@@ -1,4 +1,4 @@
-import {type ProviderInstance, type ProviderValues} from "./types/providers/provider.ts";
+import {type ProviderInstance} from "./types/providers/provider.ts";
 
 export class Cdk {
   provider;
