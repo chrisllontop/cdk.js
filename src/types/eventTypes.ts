@@ -1,5 +1,5 @@
-import type { GitHubActionsEventTrigger } from "../../providers/github/types";
-import type { ActionsEventTrigger, TypesActions } from "../providers/provider";
+import type { GitHubActionsEventTrigger } from "../providers/github/types";
+import type { ActionsEventTrigger, TypesActions } from "./providers/provider";
 
 type BasicTypes = TypesActions.CREATED 
   | TypesActions.EDITED 

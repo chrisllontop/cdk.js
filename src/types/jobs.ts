@@ -1,5 +1,5 @@
-import type { GitHubActionsEventTrigger } from "../../providers/github/types";
-import type { ActionsEventTrigger } from "../providers/provider";
+import type { GitHubActionsEventTrigger } from "../providers/github/types";
+import type { ActionsEventTrigger } from "./providers/provider";
 
 export type IssueCommentJobsUniqueOptionsExist<T extends GitHubActionsEventTrigger> = T extends ActionsEventTrigger.ISSUE_COMMENT
 ? IssueCommentJobsUniqueOptions

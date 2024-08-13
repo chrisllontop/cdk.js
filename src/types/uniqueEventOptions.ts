@@ -1,5 +1,5 @@
-import type { GitHubActionsEventTrigger } from "../../providers/github/types";
-import type { ActionsEventTrigger } from "../providers/provider";
+import type { GitHubActionsEventTrigger } from "../providers/github/types";
+import type { ActionsEventTrigger } from "./providers/provider";
 
 type UniquePullRequestOptions = {
   branches?: String | String[] 

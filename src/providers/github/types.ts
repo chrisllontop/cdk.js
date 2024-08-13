@@ -1,7 +1,7 @@
-import type { EventTypes } from "../../types/event_types";
+import type { EventTypes } from "../../types/eventTypes";
 import type { GitHubActionsJob, IssueCommentJobsUniqueOptionsExist, PullRequestJobsUniqueOptionsExist, PullRequestReviewJobsUniqueOptionsExist, PullRequestTargetJobsUniqueOptionsExist, StatusJobsUniqueOptionsExist, WorkFlowsRunsJobsUniqueOptionsExist } from "../../types/jobs";
 import { ActionsEventTrigger } from "../../types/providers/provider";
-import type { UniqueOptions } from "../../types/unique_event_options";
+import type { UniqueOptions } from "../../types/uniqueEventOptions";
 
 export type GitHubActionsWorkflow = {
   name?: string;
