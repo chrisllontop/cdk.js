@@ -54,6 +54,7 @@ export enum TypesActions {
   STARTED = 'started',
   REQUESTED = 'requested',
   IN_PROGRESS = 'in_progress',
+  CHECKS_REQUESTED = 'checks_requested',
 }
 
 export enum ActionsEventTrigger {

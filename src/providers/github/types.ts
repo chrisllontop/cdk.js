@@ -16,7 +16,7 @@ export type GitHubActionsWorkflow = {
   >;
 };
 
-export type GitHubActionsEventTrigger = | ActionsEventTrigger.BRANCH_PROTECTION_RULE
+export type GitHubActionsEventTrigger = ActionsEventTrigger.BRANCH_PROTECTION_RULE
   | ActionsEventTrigger.CHECK_RUN
   | ActionsEventTrigger.CHECK_SUITE
   | ActionsEventTrigger.CREATE
@@ -30,7 +30,6 @@ export type GitHubActionsEventTrigger = | ActionsEventTrigger.BRANCH_PROTECTION_
   | ActionsEventTrigger.ISSUE_COMMENT
   | ActionsEventTrigger.ISSUES
   | ActionsEventTrigger.LABEL
-  | ActionsEventTrigger.MERGE_GROUP
   | ActionsEventTrigger.MILESTONE
   | ActionsEventTrigger.PAGE_BUILD
   | ActionsEventTrigger.PROJECT
@@ -52,9 +51,16 @@ export type GitHubActionsEventTrigger = | ActionsEventTrigger.BRANCH_PROTECTION_
   | ActionsEventTrigger.WORKFLOW_DISPATCH
   | ActionsEventTrigger.WORKFLOW_RUN
 
+type ExtendedGitHubActionsEventTrigger<T extends GitHubActionsEventTrigger> = 
+  T extends ActionsEventTrigger.PULL_REQUEST ? 
+  ActionsEventTrigger.MERGE_GROUP : 
+  never;
+
+export type CompleGitHubActionsEventTrigger<T extends GitHubActionsEventTrigger> = GitHubActionsEventTrigger & ExtendedGitHubActionsEventTrigger<T>
+
 export type GitHubActionsWhitOptions<T extends GitHubActionsEventTrigger> = {
-  [key in GitHubActionsEventTrigger]: OptionsEvents<T>;
-} | GitHubActionsEventTrigger;
+  [key in CompleGitHubActionsEventTrigger<T>]: OptionsEvents<T>;
+} | CompleGitHubActionsEventTrigger<T>;
 
 export type OptionsEvents<T extends GitHubActionsEventTrigger>  = {
   types?: EventTypes<T> & UniqueOptions<T>

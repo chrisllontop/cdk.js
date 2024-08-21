@@ -1,5 +1,5 @@
 import {IntegrationProvider} from "../provider";
-import type {GitHubActionsEventTrigger, GitHubActionsWhitOptions, GitHubActionsWorkflow, OptionsEvents} from "./types.ts";
+import type {CompleGitHubActionsEventTrigger, GitHubActionsEventTrigger, GitHubActionsWhitOptions, GitHubActionsWorkflow, OptionsEvents} from "./types.ts";
 
 export class GithubProvider extends IntegrationProvider {
   pipeline: GitHubActionsWorkflow = {}
@@ -13,7 +13,7 @@ export class GithubProvider extends IntegrationProvider {
     return this;
   }
 
-  on<T extends GitHubActionsEventTrigger>(actions: T, options: OptionsEvents<T> | null = null) {
+  on<T extends GitHubActionsEventTrigger>(actions: CompleGitHubActionsEventTrigger<T>, options: OptionsEvents<T> | null = null) {
     const actionsWhitOptions: GitHubActionsWhitOptions<T> =  options ? {[actions]: options}  as GitHubActionsWhitOptions<T> : actions;
 
     if(this.pipeline.on) {

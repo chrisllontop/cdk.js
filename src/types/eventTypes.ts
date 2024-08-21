@@ -110,6 +110,8 @@ type WorkFlowRunTypes = TypesActions.COMPLETED
   | TypesActions.REQUESTED
   | TypesActions.IN_PROGRESS
 
+type MergeGroupTypes = TypesActions.CHECKS_REQUESTED
+
 export type EventTypes<T extends GitHubActionsEventTrigger> = T extends ActionsEventTrigger.BRANCH_PROTECTION_RULE
   ? BasicTypes | BasicTypes[]
   : T extends ActionsEventTrigger.CHECK_RUN 
@@ -148,6 +150,8 @@ export type EventTypes<T extends GitHubActionsEventTrigger> = T extends ActionsE
   ? WatchTypes | WatchTypes[]
   : T extends ActionsEventTrigger.WORKFLOW_RUN
   ? WorkFlowRunTypes | WorkFlowRunTypes[]
+  : T extends ActionsEventTrigger.MERGE_GROUP
+  ? MergeGroupTypes | MergeGroupTypes[]
   : never;
 
 
